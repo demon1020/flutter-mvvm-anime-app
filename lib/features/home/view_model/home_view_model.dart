@@ -1,4 +1,8 @@
-import '../core.dart';
+import 'package:flutter/material.dart';
+
+import '../../../data/response/api_response.dart';
+import '../../../repository/home_repository.dart';
+import '../model/movies_model.dart';
 
 class HomeViewViewModel with ChangeNotifier {
   final _myRepo = HomeRepository();

@@ -1,10 +1,10 @@
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '../../model/user_model.dart';
+import '../../features/user/model/user_model.dart';
+import '../../features/user/view_model/user_view_model.dart';
 import '../../utils/routes/routes_name.dart';
-import '../user_view_model.dart';
+
 
 class SplashServices {
 

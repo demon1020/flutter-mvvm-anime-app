@@ -1,4 +1,6 @@
-import 'package:mvvm_dartz/core.dart';
+import 'package:flutter/material.dart';
+
+import '../utils/theme/material_color.dart';
 
 class AppColor {
 

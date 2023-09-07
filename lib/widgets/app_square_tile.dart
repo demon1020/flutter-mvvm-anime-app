@@ -1,4 +1,4 @@
-import 'package:mvvm_dartz/core.dart';
+import 'package:flutter/material.dart';
 
 class AppSquareTile extends StatelessWidget {
   final String imagePath;

@@ -1,19 +1,24 @@
-import 'package:mvvm_dartz/core.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class LoginView extends StatefulWidget {
-  const LoginView({super.key});
+import '../../../resources/color.dart';
+import '../../../widgets/app_button.dart';
+import '../../../widgets/app_textfield.dart';
+import '../view_model/auth_view_model.dart';
+
+class AuthView extends StatefulWidget {
+  const AuthView({super.key});
 
   @override
-  State<LoginView> createState() => _LoginScreenState();
+  State<AuthView> createState() => _AuthViewState();
 }
 
-class _LoginScreenState extends State<LoginView> {
+class _AuthViewState extends State<AuthView> {
 
   @override
   void dispose() {
     var authViewModel = Provider.of<AuthViewModel>(context, listen: false);
     authViewModel.disposeData();
-    authViewModel.dispose();
     super.dispose();
   }
 

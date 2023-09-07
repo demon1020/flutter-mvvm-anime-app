@@ -1,4 +1,6 @@
-import '../../core.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../view_model/user_view_model.dart';
 
 class UserView extends StatefulWidget {
   const UserView({Key? key}) : super(key: key);
