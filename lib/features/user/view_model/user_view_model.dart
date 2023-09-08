@@ -1,10 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../../utils/global.dart';
-import '../../../utils/routes/routes_name.dart';
-import '../model/user_model.dart';
+import '/core.dart';
 
 class UserViewModel with ChangeNotifier{
 

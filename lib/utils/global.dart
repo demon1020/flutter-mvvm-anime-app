@@ -1,3 +1,3 @@
-import 'package:flutter/material.dart';
+import '/core.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();

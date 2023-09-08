@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../../../repository/auth_repository.dart';
-import '../../../utils/global.dart';
-import '../../../utils/routes/routes_name.dart';
-import '../../../utils/utils.dart';
-import '../../user/view_model/user_view_model.dart';
+import '/core.dart';
 
 class AuthViewModel with ChangeNotifier {
 

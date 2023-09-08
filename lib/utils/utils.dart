@@ -1,10 +1,4 @@
-import 'package:another_flushbar/flushbar.dart';
-import 'package:another_flushbar/flushbar_route.dart';
-import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-
-import '../resources/color.dart';
-import 'global.dart';
+import '/core.dart';
 
 enum Result {success, warning, error}
 

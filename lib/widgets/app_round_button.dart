@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import '../resources/color.dart';
+import '/core.dart';
 
 class AppRoundButton extends StatelessWidget {
   final String title;

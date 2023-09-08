@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../resources/color.dart';
+import '/core.dart';
 
 class AppTextField extends StatefulWidget {
   final TextEditingController controller;

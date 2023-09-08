@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '/core.dart';
 
 class CustomMaterialColor {
   static MaterialColor generate(int customColor) {

@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../../../resources/color.dart';
-import '../../../widgets/app_button.dart';
-import '../../../widgets/app_textfield.dart';
-import '../view_model/auth_view_model.dart';
+import '/core.dart';
 
 class AuthView extends StatefulWidget {
   const AuthView({super.key});

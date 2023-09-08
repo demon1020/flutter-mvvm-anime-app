@@ -13,7 +13,7 @@ class BaseResponse {
     );
   }
 
-  bool get accessTokenExpired => this.code == 498 ? true : false;
-  bool get refreshTokenExpired => this.code == 698 ? true : false;
-  bool get userResigned => this.code == 401 ? true : false;
+  bool get accessTokenExpired => code == 498 ? true : false;
+  bool get refreshTokenExpired => code == 698 ? true : false;
+  bool get userResigned => code == 401 ? true : false;
 }

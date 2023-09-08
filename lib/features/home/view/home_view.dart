@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../../../utils/enums/status.dart';
-import '../../../utils/routes/routes_name.dart';
-import '../../../utils/utils.dart';
-import '../../user/view_model/user_view_model.dart';
-import '../view_model/home_view_model.dart';
+import '/core.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);

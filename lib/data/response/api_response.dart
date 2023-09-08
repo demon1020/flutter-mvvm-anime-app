@@ -1,15 +1,7 @@
-import 'dart:convert';
+import '/core.dart';
 
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
-
-import '../../features/home/model/movies_model.dart';
-import '../../features/user/model/user_model.dart';
-import '../../utils/enums/status.dart';
-import '../app_excaptions.dart';
-
-
 
 class ApiResponse<T> {
   Status? status;
