@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm_dartz/utils/global.dart';
-import 'package:mvvm_dartz/utils/providers/providers.dart';
-import 'package:mvvm_dartz/utils/routes/routes.dart';
-import 'package:mvvm_dartz/utils/routes/routes_name.dart';
-import 'package:mvvm_dartz/utils/theme/theme.dart';
 import 'package:provider/provider.dart';
+
+import '../../utils/global.dart';
+import '../../utils/providers/providers.dart';
+import '../../utils/routes/routes.dart';
+import '../../utils/routes/routes_name.dart';
+import '../../utils/theme/theme.dart';
 
 void main() {
   runApp(

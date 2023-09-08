@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm_dartz/utils/routes/routes_name.dart';
 
+import '../../utils/routes/routes_name.dart';
 import '../../features/auth/view/auth_view.dart';
 import '../../features/home/view/home_view.dart';
 import '../../features/user/view/user_view.dart';
