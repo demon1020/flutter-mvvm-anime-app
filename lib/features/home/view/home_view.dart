@@ -1,3 +1,5 @@
+import 'package:skeletonizer/skeletonizer.dart';
+
 import '/core.dart';
 
 class HomeView extends StatefulWidget {
@@ -8,16 +10,14 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-
   @override
   void initState() {
     super.initState();
 
-    final provider = Provider.of<HomeViewViewModel>(context,listen: false);
+    final provider = Provider.of<HomeViewViewModel>(context, listen: false);
     provider.fetchMoviesListApi();
   }
 
-  
   @override
   Widget build(BuildContext context) {
     final userPrefernece = Provider.of<UserViewModel>(context);
@@ -28,23 +28,59 @@ class _HomeViewState extends State<HomeView> {
         automaticallyImplyLeading: false,
         actions: [
           InkWell(
-              onTap: (){
-                userPrefernece.remove().then((value){
+              onTap: () {
+                userPrefernece.remove().then((value) {
                   Navigator.pushNamed(context, RoutesName.login);
                 });
               },
               child: const Center(child: Text('Logout'))),
-          const SizedBox(width: 20,)
+          const SizedBox(
+            width: 20,
+          )
         ],
       ),
       body: buildHomeScreen(provider),
     );
   }
 
-  buildHomeScreen(provider){
-    switch(provider.moviesList.status){
+  buildHomeScreen(provider) {
+    switch (provider.moviesList.status) {
       case Status.loading:
-        return const Center(child: CircularProgressIndicator());
+        return Skeletonizer(
+          child: ListView.builder(
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Card(
+                child: ListTile(
+                  leading: Image.network(
+                    'url',
+                    errorBuilder: (context, error, stack) {
+                      return const Icon(
+                        Icons.error,
+                        color: Colors.red,
+                      );
+                    },
+                    height: 40,
+                    width: 40,
+                    fit: BoxFit.cover,
+                  ),
+                  title: Text("Title"),
+                  subtitle: Text("Subtitle"),
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(Utils.averageRating([]).toStringAsFixed(1)),
+                      const Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                      )
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        );
       case Status.error:
         return Center(child: Text(provider.moviesList.message.toString()));
       case Status.completed:
@@ -52,16 +88,17 @@ class _HomeViewState extends State<HomeView> {
           margin: const EdgeInsets.all(10),
           child: ListView.builder(
               itemCount: provider.moviesList.data!.movies!.length,
-              itemBuilder: (context,index){
+              itemBuilder: (context, index) {
                 var item = provider.moviesList.data!.movies![index];
                 return Card(
                   child: ListTile(
-
                     leading: Image.network(
-
                       item.posterurl.toString(),
-                      errorBuilder: (context, error, stack){
-                        return const Icon(Icons.error, color: Colors.red,);
+                      errorBuilder: (context, error, stack) {
+                        return const Icon(
+                          Icons.error,
+                          color: Colors.red,
+                        );
                       },
                       height: 40,
                       width: 40,
@@ -72,8 +109,12 @@ class _HomeViewState extends State<HomeView> {
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(Utils.averageRating(item.ratings!).toStringAsFixed(1)),
-                        const Icon(Icons.star , color: Colors.yellow,)
+                        Text(Utils.averageRating(item.ratings!)
+                            .toStringAsFixed(1)),
+                        const Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                        )
                       ],
                     ),
                   ),
