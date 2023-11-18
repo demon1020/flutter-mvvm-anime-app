@@ -10,6 +10,13 @@ class AuthView extends StatefulWidget {
 class _AuthViewState extends State<AuthView> {
 
   @override
+  void initState() {
+    super.initState();
+    var authViewModel = Provider.of<AuthViewModel>(context, listen: false);
+    authViewModel.init();
+  }
+
+  @override
   void dispose() {
     var authViewModel = Provider.of<AuthViewModel>(context, listen: false);
     authViewModel.disposeData();
@@ -33,9 +40,7 @@ class _AuthViewState extends State<AuthView> {
                 Icons.person,
                 size: 100,
               ),
-
               const SizedBox(height: 50),
-
               const Text(
                 'Welcome back you\'ve been missed!',
                 style: TextStyle(
@@ -43,9 +48,7 @@ class _AuthViewState extends State<AuthView> {
                   fontSize: 16,
                 ),
               ),
-
               const SizedBox(height: 25),
-
               AppTextField(
                 controller: authViewModel.emailController,
                 hintText: 'Email',
@@ -53,9 +56,7 @@ class _AuthViewState extends State<AuthView> {
                 textInputType: TextInputType.emailAddress,
                 // validator: (email) => Validator.validateEmail(email),
               ),
-
               const SizedBox(height: 10),
-
               AppTextField(
                 controller: authViewModel.passwordController,
                 hintText: 'Password',
@@ -63,7 +64,6 @@ class _AuthViewState extends State<AuthView> {
                 showSuffixIcon: true,
                 // validator: (pass) => Validator.validatePassword(pass),
               ),
-
               const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -77,24 +77,16 @@ class _AuthViewState extends State<AuthView> {
                   ],
                 ),
               ),
-
               const SizedBox(height: 20),
-
               AppButton(
                 text: "Sign In",
                 isLoading: authViewModel.loading,
                 onTap: () {
-                      // Map data = {
-                      //   'email' : _emailController.text.toString(),
-                      //   'password' : _passwordController.text.toString(),
-                      // };
-
-                      Map data = {
-                        'email' : 'eve.holt@reqres.in',
-                        'password' : 'cityslicka',
-                      };
-                      authViewModel.loginApi(data);
-
+                  Map<String, dynamic> data = {
+                    'email': authViewModel.emailController.text.trim(),
+                    'password': authViewModel.passwordController.text.trim(),
+                  };
+                  authViewModel.loginApi(data);
                 },
               ),
               const SizedBox(height: 20),

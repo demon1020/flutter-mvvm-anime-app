@@ -11,7 +11,7 @@ class AppUrl {
 
   static var registerApiEndPoint =  baseUrl + '/api/register' ;
 
-  static var moviesListEndPoint =  'https://manthansutar.in/tools/copy/view.php?1694114443' ;
+  static var animeListEndPoint =  'https://anime-db.p.rapidapi.com/anime' ;
 
 
 }

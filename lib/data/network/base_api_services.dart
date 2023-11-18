@@ -5,8 +5,8 @@ abstract class BaseApiServices {
 
   Future<Either<AppException, Q>> callPostAPI<Q, R>(String apiURL,
       Map<String, String> headers, ComputeCallback<String, R> callback,
-      {body, disableTokenValidityCheck = false});
+      {body});
 
   Future<Either<AppException, Q>> callGetAPI<Q, R>(String apiURL,
-      Map<String, String> headers, ComputeCallback<String, R> callback, {disableTokenValidityCheck = false});
+      Map<String, String> headers, ComputeCallback<String, R> callback, {Map<String, dynamic> query});
 }

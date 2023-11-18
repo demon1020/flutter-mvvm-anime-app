@@ -11,6 +11,7 @@ export 'routes/routes_name.dart';
 //theme
 export 'theme/material_color.dart';
 export 'theme/theme.dart';
+export 'validator/validator.dart';
 
 export 'global.dart';
 export 'utils.dart';

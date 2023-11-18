@@ -37,7 +37,7 @@ class UserViewModel with ChangeNotifier{
       if(value.token.toString() == 'null' || value.token.toString() == ''){
         Navigator.pushNamed(navigatorKey.currentContext!, RoutesName.login);
       }else {
-        Navigator.pushNamed(navigatorKey.currentContext!, RoutesName.home);
+        Navigator.pushReplacementNamed(navigatorKey.currentContext!, RoutesName.home);
       }
 
     }).onError((error, stackTrace){

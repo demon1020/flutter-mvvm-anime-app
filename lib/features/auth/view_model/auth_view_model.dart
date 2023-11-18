@@ -11,12 +11,17 @@ class AuthViewModel with ChangeNotifier {
 
   bool loading = false;
 
+  init(){
+    emailController = TextEditingController(text: "eve.holt@reqres.in");
+    passwordController = TextEditingController(text: "cityslicka");
+  }
+
   setLoading(isLoading){
     loading = isLoading;
     notifyListeners();
   }
 
-  Future<void> loginApi(dynamic data) async {
+  Future<void> loginApi(Map<String, dynamic> data) async {
     setLoading(true);
 
     var response = await _myRepo.login(data);

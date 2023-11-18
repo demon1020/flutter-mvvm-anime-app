@@ -1,15 +1,8 @@
 class RoutesName {
 
-  static const String splash = 'splash_view' ;
-
-
-  //accounts routes name
-  static const String login = 'login_screen' ;
-  static const String wrapper = 'wrapper_screen' ;
-
-  //home screen routes name
-  static const String home = 'home_sceen' ;
-
-
+  static const String splash = 'splashView' ;
+  static const String login = 'loginView' ;
+  static const String wrapper = 'wrapperView' ;
+  static const String home = 'homeView' ;
 
 }

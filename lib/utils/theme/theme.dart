@@ -13,7 +13,7 @@ class AppTheme {
       useMaterial3: true,
       colorSchemeSeed: color,
       // primarySwatch: color,
-      // fontFamily: GoogleFonts.poppins().fontFamily,
+      fontFamily: GoogleFonts.poppins().fontFamily,
       appBarTheme: const AppBarTheme(
         elevation: 1,
       ),

@@ -3,21 +3,27 @@ import '/core.dart';
 class HomeViewViewModel with ChangeNotifier {
   final _myRepo = HomeRepository();
 
-  ApiResponse<MovieListModel> moviesList = ApiResponse.loading();
+  Map<String, String> query = {
+    'page': '1',
+    'size': '100',
+    'sortBy': 'ranking',
+    'sortOrder': 'asc'
+  };
 
-  setMoviesList(ApiResponse<MovieListModel> response) {
-    moviesList = response;
+  ApiResponse<AnimeListModel> animeList = ApiResponse.loading();
+
+  setAnimeList(ApiResponse<AnimeListModel> response) {
+    animeList = response;
   }
 
-  Future<void> fetchMoviesListApi() async {
-    setMoviesList(ApiResponse.loading());
+  Future<void> fetchAnimeListApi() async {
+    setAnimeList(ApiResponse.loading());
 
-    var response = await _myRepo.fetchMoviesList();
+    var response = await _myRepo.fetchAnimeList(query: query);
 
-    response
-        .fold((failure) => setMoviesList(ApiResponse.error(failure.message)),
+    response.fold((failure) => setAnimeList(ApiResponse.error(failure.message)),
             (data) async {
-      setMoviesList(ApiResponse.completed(data));
+      setAnimeList(ApiResponse.completed(data));
     });
     notifyListeners();
   }

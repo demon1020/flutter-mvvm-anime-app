@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final animeListModel = animeListModelFromJson(jsonString);
-
 import 'dart:convert';
 
 AnimeListModel animeListModelFromJson(String str) => AnimeListModel.fromJson(json.decode(str));
@@ -9,7 +5,7 @@ AnimeListModel animeListModelFromJson(String str) => AnimeListModel.fromJson(jso
 String animeListModelToJson(AnimeListModel data) => json.encode(data.toJson());
 
 class AnimeListModel {
-  List<Datum> data;
+  List<Anime> data;
   Meta meta;
 
   AnimeListModel({
@@ -18,7 +14,7 @@ class AnimeListModel {
   });
 
   AnimeListModel copyWith({
-    List<Datum>? data,
+    List<Anime>? data,
     Meta? meta,
   }) =>
       AnimeListModel(
@@ -27,7 +23,7 @@ class AnimeListModel {
       );
 
   factory AnimeListModel.fromJson(Map<String, dynamic> json) => AnimeListModel(
-    data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
+    data: List<Anime>.from(json["data"].map((x) => Anime.fromJson(x))),
     meta: Meta.fromJson(json["meta"]),
   );
 
@@ -37,7 +33,7 @@ class AnimeListModel {
   };
 }
 
-class Datum {
+class Anime {
   String id;
   String title;
   List<String> alternativeTitles;
@@ -53,7 +49,7 @@ class Datum {
   String thumb;
   String type;
 
-  Datum({
+  Anime({
     required this.id,
     required this.title,
     required this.alternativeTitles,
@@ -70,7 +66,7 @@ class Datum {
     required this.type,
   });
 
-  Datum copyWith({
+  Anime copyWith({
     String? id,
     String? title,
     List<String>? alternativeTitles,
@@ -86,7 +82,7 @@ class Datum {
     String? thumb,
     String? type,
   }) =>
-      Datum(
+      Anime(
         id: id ?? this.id,
         title: title ?? this.title,
         alternativeTitles: alternativeTitles ?? this.alternativeTitles,
@@ -103,7 +99,7 @@ class Datum {
         type: type ?? this.type,
       );
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory Anime.fromJson(Map<String, dynamic> json) => Anime(
     id: json["_id"],
     title: json["title"],
     alternativeTitles: List<String>.from(json["alternativeTitles"].map((x) => x)),
