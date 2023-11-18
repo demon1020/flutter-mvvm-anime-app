@@ -34,8 +34,10 @@ Rapid API [Anime DB]: Thanks to Rapid API for providing the anime data.
 Dartz Library: Appreciation for the Dartz Library for aiding in functional error handling.
 
 ## Screenshots
-
-
+![WhatsApp Image 2023-11-19 at 12 30 27 AM (1)](https://github.com/demon1020/flutter-mvvm-anime-app/assets/51175478/178fc802-e80c-484d-966c-c3706a20fc32)
+![WhatsApp Image 2023-11-19 at 12 30 26 AM (2)](https://github.com/demon1020/flutter-mvvm-anime-app/assets/51175478/b6e82f24-7a39-4b5d-811d-67ab54d817cf)
+![WhatsApp Image 2023-11-19 at 12 30 26 AM (1)](https://github.com/demon1020/flutter-mvvm-anime-app/assets/51175478/9bc34cde-a6e1-4ff6-8b9a-9f42b3093cbb)
+![WhatsApp Image 2023-11-19 at 12 30 26 AM](https://github.com/demon1020/flutter-mvvm-anime-app/assets/51175478/fe322c9d-1f9d-4bf0-b3f5-e356b73e0708)
 
 Feel free to tailor this README file by adding specific installation instructions, code snippets, screenshots, or any additional sections relevant to your app. 
 This should serve as a starting point to help users understand, install, and contribute to your Flutter anime app.
